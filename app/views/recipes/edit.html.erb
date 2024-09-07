@@ -1,0 +1,54 @@
+<%= form_for @recipe do |f| %>
+
+<div class= "sets">
+  <div class= "set1">
+
+    <h3>料理名</h3>
+    <div class="field_ryourimei">
+      <%= f.text_field :menu, class: "field_input", :size => 30 %> 
+    </div>
+
+    <h3>分類</h3>
+    <div class="field_bunrui"> 
+      <%= f.select :category, [["主菜", "syusai"], ["副菜", "hukusai"], ["汁物", "sirumono"], ["その他", "sonota"]], include_blank: "どの分類？" %>
+    </div>
+
+    <h3>材料</h3>
+    <div class="field_zairyou">
+      <%= f.text_area :material, :size=>"50x15" %> 
+    </div>
+
+    <h3>作り方</h3>
+    <div class="field_tsukurikata">
+      <%= f.text_area :process, :size=>"50x20" %> 
+    </div>
+  </div>
+
+  <div class= "set2">
+    <h3>画像</h3>
+    <div class="field">
+      <%= f.file_field :image, id:"file-input",onchange:"previewImage()" %></p>
+      <img id="image-preview" src="#" alt="Image Preview" hidden/>
+    </div>
+  </div>
+</div>
+
+  <div class= "button">
+    <%= f.submit "レシピを編集する", class:"btn" %>
+  </div>
+    
+<% end %>
+
+<script>
+  // プレビュー表示
+  const previewImage = () => {
+    const fileInput = document.getElementById("file-input");
+    const imagePreview = document.getElementById("image-preview");
+    if (fileInput.files && fileInput.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e) => (imagePreview.src = e.target.result);
+      reader.readAsDataURL(fileInput.files[0]);
+      imagePreview.hidden = false;
+    }
+  };
+</script>

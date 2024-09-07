@@ -1,0 +1,385 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body{
+    background:#fff7e9
+}
+
+/*一覧ページ*/
+
+.topimage4 {
+    width: 100%;
+    height: 400px;
+    background: url("topimage4.jpg");
+    background-size: cover;
+    background-position: 50% 10%;
+    position: relative;
+    margin:0 0 50px 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.topimage4 p {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 5em;
+    font-family :Quicksand, sans-serif;
+    top: 44%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.topimage4 a {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.search_container{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 265px;
+  overflow: hidden;
+}
+.search_container input[type="text"]{
+  border: none;
+  height: 2.0em;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  background: #3879D9;
+  color: #fff;
+  position: absolute;
+  width: 3.5em;
+  height: 3.0em;
+  right:0px;
+  top: -3px;
+  outline : none;
+}
+
+h2 {
+    padding: 1rem 2rem;
+    border-left: 3px dotted #196200;
+    margin: 20px;
+}
+
+.menu {
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+}
+
+.syusais-container {
+    width:100%;height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+.syusais {
+    width: 33%;
+    height:auto;
+    display:flex;
+    border:1px solid #ccc;
+    flex-basis: 200px;
+    padding: 10px;
+    box-sizing:border-box;
+    -ms-flex-pack:distribute;
+    justify-content:space-between;
+}
+
+.syusaitati {
+    display:flex;
+    flex-flow: column;
+    height:400px;
+    margin:0 0 1em;
+    font-size:13px;
+    margin: 25px;
+}
+
+
+.hukusais-container {
+    width:100%;height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+.hukusais {
+    width: 33%;
+    height:auto;
+    display:flex;
+    border:1px solid #ccc;
+    flex-basis: 200px;
+    padding: 10px;
+    box-sizing:border-box;
+    -ms-flex-pack:distribute;
+    justify-content:space-between;
+}
+
+.hukusaitati {
+    display:flex;
+    flex-flow: column;
+    height:400px;
+    margin:0 0 1em;
+    font-size:13px;
+    margin: 25px;
+}
+
+
+.sirumonos-container {
+    width:100%;height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+.sirumonos {
+    width: 33%;
+    height:auto;
+    display:flex;
+    border:1px solid #ccc;
+    flex-basis: 200px;
+    padding: 10px;
+    box-sizing:border-box;
+    -ms-flex-pack:distribute;
+    justify-content:space-between;
+}
+
+.sirumonotati {
+    display:flex;
+    flex-flow: column;
+    height:400px;
+    margin:0 0 1em;
+    font-size:13px;
+    margin: 25px;
+}
+
+
+.sonotas-container {
+    width:100%;height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+.sonotas {
+    width: 33%;
+    height:auto;
+    display:flex;
+    border:1px solid #ccc;
+    flex-basis: 200px;
+    padding: 10px;
+    box-sizing:border-box;
+    -ms-flex-pack:distribute;
+    justify-content:space-between;
+}
+
+.sonotatati {
+    display:flex;
+    flex-flow: column;
+    height:400px;
+    margin:0 0 1em;
+    font-size:13px;
+    margin: 25px;
+}
+
+
+
+.topimage6 {
+    width: 250px;
+    height: 200px;
+    background: url("topimage6.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+.topimage6 p {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-family :Quicksand, sans-serif;
+}
+
+
+.more-btn {
+    --more-btn-color:#333;/*矢印と文字の色*/
+    height: 40px;
+  }
+  
+  .more-btn a {
+    position: relative; /*位置（ここを基準に）*/
+    padding: 0 3em 0 .5em; /*内側余白調整（上右下左）*/
+    color: var(--more-btn-color);  /*リンク文字色*/
+    text-decoration: none; /*リンク下線を消す*/
+    outline: none; /*枠線を消す*/
+  }
+  
+  .more-btn a::before,
+  .more-btn a::after{
+    content: ''; /*矢印部分作成*/
+    position: absolute; /*位置（ここを動かす）*/
+    background: var(--more-btn-color); /*線の色*/
+    height: 1px; /*線の太さ*/
+    transition: all .3s; /*なめらかな動き*/
+  }
+  
+  .more-btn a::before {
+    bottom: -10px; /*下からの距離*/
+    left: 0%; /*左からの距離*/
+    width: 90%; /*ボタンの幅*/
+  }
+  
+  .more-btn a::after {
+    bottom: -5px; /*下からの距離*/
+    right: 10%; /*右からの距離*/
+    width: 15px; /*矢印部分の幅*/
+    transform: rotate(35deg);
+  }
+  
+  /*マウスオーバー時の動き*/
+  .more-btn a:hover::before{
+    left: 10%;
+  }
+  
+  .more-btn a:hover::after {
+    right:0%;
+  }
+  
+
+
+/*新規レシピページ*/
+
+.button {
+    text-align: center;
+    margin: 50px;
+}
+
+
+.btn {
+    --link-btn-color:#8B9B9D; /*ボタンの色はここで設定*/
+    display:block; /*ブロック要素へ変換*/
+    margin:auto; /*ボタン中央寄せ*/
+
+    border:1px solid var(--link-btn-color); /*枠線の太さ・種類・色*/
+    background:var(--link-btn-color); /*ボタンの色*/
+    padding: 0.5em 2em; /*ボタンの高さ*/
+    color:#fff; /*文字の色*/
+    border-radius:1px; /*角の丸み*/
+    text-decoration: none; /*リンクの下線を消す*/
+    text-align: center; /*文字中央寄せ*/
+    transition: all .3s;
+}
+  
+  /*マウスオーバー時に反転させる*/
+.btn :hover{
+    background:initial;
+    color:var(--link-btn-color);
+}
+
+.label {
+    margin:50px;
+}
+
+.field_input {
+    width: 95%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: .8em;
+    border-radius: 1em;
+    border: 2px solid #aaa;
+}
+
+.field_zairyou textarea {
+  width: 95%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: .8em;
+  border-radius: 1em;
+  border: 2px solid #aaa;
+}
+
+.field_tsukurikata textarea {
+  width: 166%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: .8em;
+  border-radius: 1em;
+  border: 2px solid #aaa;
+}
+  
+.sets {
+    display:flex;
+    width:100%
+}
+
+.set1 {
+    width:60%
+}
+
+.set2 {
+    width:40%
+}
+
+h3 {
+    margin:20px;
+    line-height: 1.5;
+    padding: 0.5em 0;
+    list-style-type: none!important;
+}
+  
+h3:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0da";
+    position: absolute;
+    left : 1em; /*左端からのアイコンまで*/
+    color: gray; /*アイコン色*/
+}
+
+#image-preview{
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/*詳細ページ*/
+.set1 p {
+    width:80%;
+	margin: 2em auto;
+	position: relative;
+	background: #ededed; /*背景色*/
+	padding: 3em 1em 2em; /*内側余白（上・左右・下）*/
+}
+
+.set1 p::before {
+	position: absolute;
+	content: "";
+	width: 95%;
+	height: 10px;
+	top: 0.5em;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+	border-top: dotted 10px #fff; /*ドットの形・大きさ・色*/
+}
+   

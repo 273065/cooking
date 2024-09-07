@@ -1,0 +1,47 @@
+<h2>レシピの詳細</h2>
+
+<div class="sets">
+  <div class= "set1">
+    <h3>料理名</h3>
+    <p><%= @recipe.menu %></p>
+
+    
+  
+    <h3>材料</h3>
+    <p><%= @recipe.material %></p>
+
+    <h3>作り方</h3>
+    <p><%= @recipe.process %></p>
+
+    <p><%= @recipe.created_at %></p>
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(@recipe) %>
+        <%= button_to recipe_like_path(@recipe), method: :delete do %>
+           <i class="fas fa-heart"></i><%= @recipe.likes.count %>
+      <% end %>
+    <% else %>
+      <%= button_to recipe_likes_path(@recipe), method: :post do %>
+        <i class="far fa-heart"></i><%= @recipe.likes.count %>
+      <% end %>
+    <% end %>
+    <% else %>
+      <i class="far fa-heart"></i><%= @recipe.likes.count %>
+    <% end %>
+  </div>
+
+  <div class= "set2">
+
+    <h3>画像</h3>
+    <div class= "image">
+      <% if @recipe.image? %>
+        <%= image_tag @recipe.image_url, size: "450x300" %>
+      <% else %>
+        <div class= "topimage6">
+          <p>No Image</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<p class="more-btn"><%= link_to "編集する", edit_recipe_path(@recipe.id) %></p>

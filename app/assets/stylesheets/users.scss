@@ -1,0 +1,51 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/*マイページ*/
+.profile {
+    width: 80%;
+    font-size: 13px;
+	margin: 2em auto;
+	padding:2em;/*内側余白*/
+	background-image: linear-gradient(0deg, transparent 19px, #ccc 20px),linear-gradient(90deg,  transparent 19px, #ccc 20px);
+	background-size: 20px 20px;
+}
+
+/*お気に入りのレシピ一覧*/
+
+.okiniiris-container {
+    width:100%;height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.users {
+    width: 33%;
+    height:auto;
+    display:flex;
+    border:1px solid #ccc;
+    flex-basis: 200px;
+    padding: 10px;
+    box-sizing:border-box;
+    -ms-flex-pack:distribute;
+    justify-content:space-around;
+}
+
+.menu {
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+}
+
+.okiniiri {
+    display:flex;
+    flex-flow: column;
+    height:400px;
+    margin:0 0 1em;
+    font-size:13px;
+    margin: 25px;
+}
+
+

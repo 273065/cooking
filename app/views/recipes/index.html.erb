@@ -1,0 +1,213 @@
+
+<div class="top">
+  <div class="topimage4">
+   <p>FOOODY</p>
+
+    
+    <a><%= form_tag({controller:"recipes",action:"index"}, method: :get) do %>
+      
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索する'  %>
+       <% end %>
+      
+    <a/>
+  </div>
+</div>
+
+<div class= "recipe">
+</div>
+
+
+<div class= "headline">
+  <h2>主菜</h2>
+</div>
+
+<div class= "syusais-container">
+    
+    <% @syusais.each do |t| %>
+    
+    <div class= "syusaitati">
+      <div class= "image">
+        <% if t.image? %>
+          <%= image_tag t.image_url, size: "250x200" %>
+        <% else %>
+          <div class= "topimage6">
+            <p>No Image</p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class= "menu">
+        <p><%= t.menu %></p>
+      </div>
+
+      <div class= "like">
+        <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= button_to recipe_like_path(id: t.id, recipe_id: t.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= button_to recipe_likes_path(id: t.id, recipe_id: t.id), method: :post do %>
+                <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <i class="far fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      </div>
+      
+      <div class= "others">
+        <p class="more-btn"><%= link_to "詳細へ", recipe_path(t.id) %></p>
+        <p class="more-btn"><%= link_to "編集する", edit_recipe_path(t.id) %></p>
+        <%= button_to "削除する", recipe_path(t.id), method: :delete %>
+      </div>
+
+    </div>
+
+    <% end %>   
+</div>
+
+
+<div class= "headline">
+  <h2>副菜</h2>
+</div>
+
+<div class= "hukusais-container">
+    
+    <% @hukusais.each do |t| %>
+    
+    <div class= "hukusaitati">
+      <div class= "image">
+        <% if t.image? %>
+          <%= image_tag t.image_url, size: "250x200" %>
+        <% else %>
+          <div class= "topimage6">
+            <p>No Image</p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class= "menu">
+        <p><%= t.menu %></p>
+      </div>
+
+      <div class= "like">
+        <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= button_to recipe_like_path(id: t.id, recipe_id: t.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= button_to recipe_likes_path(id: t.id, recipe_id: t.id), method: :post do %>
+                <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <i class="far fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      </div>
+
+      <p class="more-btn"><%= link_to "詳細へ", recipe_path(t.id) %></p>
+      <p class="more-btn"><%= link_to "編集する", edit_recipe_path(t.id) %></p>
+      <%= button_to "削除する", recipe_path(t.id), method: :delete %> 
+    </div>
+
+    <% end %>   
+</div>
+
+
+<div class= "headline">
+  <h2>汁物</h2>
+</div>
+
+<div class= "sirumonos-container">
+    
+    <% @sirumonos.each do |t| %>
+    
+    <div class= "sirumonotati">
+      <div class= "image">
+        <% if t.image? %>
+          <%= image_tag t.image_url, size: "250x200" %>
+        <% else %>
+          <div class= "topimage6">
+            <p>No Image</p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class= "menu">
+        <p><%= t.menu %></p>
+      </div>
+
+      <div class= "like">
+        <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= button_to recipe_like_path(id: t.id, recipe_id: t.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= button_to recipe_likes_path(id: t.id, recipe_id: t.id), method: :post do %>
+                <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <i class="far fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      </div>
+
+      <p class="more-btn"><%= link_to "詳細へ", recipe_path(t.id) %></p>
+      <p class="more-btn"><%= link_to "編集する", edit_recipe_path(t.id) %></p>
+      <%= button_to "削除する", recipe_path(t.id), method: :delete %> 
+    </div>
+
+    <% end %>   
+</div>
+
+
+<div class= "headline">
+  <h2>その他</h2>
+</div>
+
+<div class= "sonotas-container">
+    
+    <% @sonotas.each do |t| %>
+    
+    <div class= "sonotatati">
+      <div class= "image">
+        <% if t.image? %>
+          <%= image_tag t.image_url, size: "250x200" %>
+        <% else %>
+          <div class= "topimage6">
+            <p>No Image</p>
+          </div>
+        <% end %>
+      </div>
+
+      <div class= "menu">
+        <p><%= t.menu %></p>
+      </div>
+
+      <div class= "like">
+        <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= button_to recipe_like_path(id: t.id, recipe_id: t.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= button_to recipe_likes_path(id: t.id, recipe_id: t.id), method: :post do %>
+                <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <i class="far fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      </div>
+
+      <p class="more-btn"><%= link_to "詳細へ", recipe_path(t.id) %></p>
+      <p class="more-btn"><%= link_to "編集する", edit_recipe_path(t.id) %></p>
+      <%= button_to "削除する", recipe_path(t.id), method: :delete %> 
+    </div>
+
+    <% end %>   
+</div>

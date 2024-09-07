@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<div class="wrapper">
+ <div class="container">
+  <head>
+    <title>Cooking</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/3c922830b1.js" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+  <body>
+    <header>
+      <h1>FOOODY</h1>
+      <a class="circle" href="~"></a>
+      <div class="header-list">
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to "New recipe",new_recipe_path %></li>
+            <li><%= link_to "My page", user_path(current_user.id) %></li>
+            <li><%= button_to 'Logout', destroy_user_session_path, method: :delete %></li>
+            <a href="http://localhost:3000/recipes" class="btn btn-border-shadow btn-border-shadow--color">Home</a>
+          <% end %>
+          
+        </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    </div>
+    <footer>
+      <p>FOOODY</p>
+      <a>Copyright © Cooking All Rights Reserved.</a>
+    </footer>
+  </body>
+</div>
+</html>

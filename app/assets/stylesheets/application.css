@@ -1,0 +1,185 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+  }
+
+  header {
+    width: 100%;
+    background-color: #fff7e9;
+    height: 150px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header a {
+    color: black; 
+    text-decoration: none; 
+  }
+  header h1 {
+    color: #196200;
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  .circle{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    left: 100px;
+    border: dotted 3px #196200;
+  }
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+    font-size: 12px;
+  }
+
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+  
+  html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  
+  /* 背景用*/
+  body {
+    padding: 30px;
+  }
+  
+  .btn,
+  a.btn,
+  button.btn {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    border-radius: 0.5rem;
+  }
+  
+  a.btn-border-shadow {
+    padding: calc(1.5rem - 12px) 3rem 1.5rem;
+  
+    background: #0c0c0c;
+  }
+  
+  a.btn-border-shadow:before {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+  
+    width: 100%;
+    height: 100%;
+  
+    content: "";
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  
+    border: 3px solid #000000;
+    border-radius: 0.5rem;
+  }
+  
+  a.btn-border-shadow:hover {
+    padding: calc(1.5rem - 6px) 3rem;
+  }
+  
+  a.btn-border-shadow:hover:before {
+    top: 0;
+    left: 0;
+  }
+  
+  a.btn-border-shadow--color {
+    border-radius: 0;
+    background: rgb(148, 148, 148);
+  }
+  
+  a.btn-border-shadow--color:before {
+    border-radius: 0;
+  }
+ 
+  .wrapper {
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #5b5b5b5b;
+    height: 70px;
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  footer p {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bolder;
+    color: #196200;
+  }

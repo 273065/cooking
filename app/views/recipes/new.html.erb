@@ -1,0 +1,81 @@
+<!--<h1>FOOODY</h1>-->
+<h2>新規追加レシピ</h2>
+<%= form_for @recipe do |f| %>
+
+<div class= "sets">
+  <div class= "set1">
+    <h3>料理名</h3>
+    <div class="field_ryourimei">
+        <%= f.text_field :menu, class: "field_input", :placeholder => " ex.) 肉じゃが" %>
+    </div>
+  
+    <h3>分類</h3>
+    <div class= "field_bunrui">
+        <%= f.select :category, [["主菜", "syusai"], ["副菜", "hukusai"], ["汁物", "sirumono"], ["その他", "sonota"]], include_blank: "どの投稿？" %>
+    </div>
+
+    
+
+    <h3>材料</h3>
+    <div class="field_zairyou">
+        
+        <%= f.text_area :material, :size=>"50x20", class: "area_input", :placeholder => " ex.)
+・牛もも肉　　　150ｇ
+・じゃがいも　　250ｇ
+・にんじん　　　1/2本
+・玉ねぎ　　　　1/2個
+・水　　　　　　400ml
+・醤油　　　　　大3
+・サラダ油　　　大1
+
+(A)みりん　　　大2
+(A)酒　　　　　大2
+(A)砂糖　　　　大1
+(A)顆粒和風だし　　小1" %>
+    </div>
+
+    
+    <h3>作り方</h3>
+    <div class="field_tsukurikata">
+        <%= f.text_area :process, :size=>"50x20", class: "area_input", :placeholder => " ex.)
+①じゃがいもの皮をむいて芽を取り除き、一口大に切る。にんじんは乱切り。玉ねぎはくし切り。
+②中火のフライパンにサラダ油をひき、1を入れて炒め、油がなじんだら水を加えて加熱し、沸騰したら肉を入れる。
+③アクを取りながら中火で加熱し、肉の色が変わったら(A)を入れる。
+④じゃがいもが柔らかくなったら、2、醤油を入れて落し蓋をし、中火で10分程加熱し、味が全体になじんだら完成！" %>
+    </div>
+    
+    
+
+  </div>
+
+  <div class= "set2">
+    <h3>写真</h3>
+    <div class="image">
+      <p><%= f.file_field :image, id:"file-input",onchange:"previewImage()" %></p>
+      <img id="image-preview" src="#" alt="Image Preview" hidden/>
+    </div>
+  </div>
+</div>
+  
+<div class= "button">
+  <%= f.submit "レシピを追加する", class:"btn" %>
+</div>
+
+<% end %>
+
+<script>
+  // プレビュー表示
+  const previewImage = () => {
+    const fileInput = document.getElementById("file-input");
+    const imagePreview = document.getElementById("image-preview");
+    if (fileInput.files && fileInput.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e) => (imagePreview.src = e.target.result);
+      reader.readAsDataURL(fileInput.files[0]);
+      imagePreview.hidden = false;
+    }
+  };
+</script>
+
+
+    
